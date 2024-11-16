@@ -1,5 +1,6 @@
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_router/jaspr_router.dart';
+import 'package:portfolio_jaspr/constants/theme.dart';
 
 import 'components/header.dart';
 import 'pages/about.dart';
@@ -38,7 +39,10 @@ class App extends StatelessComponent {
   static final styles = [
     css('.main', [
       // The '&' refers to the parent selector of a nested style rules.
-      css('&').box(height: 100.vh).flexbox(direction: FlexDirection.column, wrap: FlexWrap.wrap),
+      css('&')
+          .background(color: chineseBlack)
+          .box(height: 100.vh)
+          .flexbox(direction: FlexDirection.column, wrap: FlexWrap.wrap),
       css('section').flexItem(flex: const Flex(grow: 1)).flexbox(
             direction: FlexDirection.column,
             justifyContent: JustifyContent.center,

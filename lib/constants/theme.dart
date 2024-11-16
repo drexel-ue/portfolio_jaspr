@@ -9,3 +9,6 @@ const eerieBlack = Color.hex('#1A0B2E');
 
 /// White.
 const white = Color.hex('#FFFFFF');
+
+/// Chinese Black.
+const chineseBlack = Color.hex('#12071f');
