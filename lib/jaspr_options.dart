@@ -2,11 +2,12 @@
 // Generated with jaspr_builder
 
 import 'package:jaspr/jaspr.dart';
-import 'package:portfolio_jaspr/components/counter.dart' as prefix0;
-import 'package:portfolio_jaspr/components/header.dart' as prefix1;
-import 'package:portfolio_jaspr/pages/about.dart' as prefix2;
+import 'package:portfolio_jaspr/components/header.dart' as prefix0;
+import 'package:portfolio_jaspr/pages/about.dart' as prefix1;
+import 'package:portfolio_jaspr/pages/experience.dart' as prefix2;
 import 'package:portfolio_jaspr/pages/home.dart' as prefix3;
-import 'package:portfolio_jaspr/app.dart' as prefix4;
+import 'package:portfolio_jaspr/pages/projects.dart' as prefix4;
+import 'package:portfolio_jaspr/app.dart' as prefix5;
 
 /// Default [JasprOptions] for use with your jaspr project.
 ///
@@ -26,13 +27,15 @@ import 'package:portfolio_jaspr/app.dart' as prefix4;
 /// ```
 final defaultJasprOptions = JasprOptions(
   clients: {
-    prefix2.About: ClientTarget<prefix2.About>('pages/about'),
+    prefix1.About: ClientTarget<prefix1.About>('pages/about'),
+    prefix2.Experience: ClientTarget<prefix2.Experience>('pages/experience'),
     prefix3.Home: ClientTarget<prefix3.Home>('pages/home'),
+    prefix4.Projects: ClientTarget<prefix4.Projects>('pages/projects'),
   },
   styles: () => [
-    ...prefix0.CounterState.styles,
-    ...prefix1.Header.styles,
-    ...prefix2.About.styles,
-    ...prefix4.App.styles,
+    ...prefix0.Header.styles,
+    ...prefix3.Home.styles,
+    ...prefix4.Projects.styles,
+    ...prefix5.App.styles,
   ],
 );

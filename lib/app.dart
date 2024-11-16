@@ -1,6 +1,8 @@
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_router/jaspr_router.dart';
 import 'package:portfolio_jaspr/constants/theme.dart';
+import 'package:portfolio_jaspr/pages/experience.dart';
+import 'package:portfolio_jaspr/pages/projects.dart';
 
 import 'components/header.dart';
 import 'pages/about.dart';
@@ -26,6 +28,12 @@ class App extends StatelessComponent {
       const Header(),
       Router(routes: [
         Route(path: '/', title: 'Home', builder: (context, state) => const Home()),
+        Route(
+          path: '/experience',
+          title: 'Experience',
+          builder: (context, state) => const Experience(),
+        ),
+        Route(path: '/projects', title: 'Projects', builder: (context, state) => const Projects()),
         Route(path: '/about', title: 'About', builder: (context, state) => const About()),
       ]),
     ]);
@@ -36,7 +44,7 @@ class App extends StatelessComponent {
   // By using the @css annotation, these will be rendered automatically to css inside the <head> of your page.
   // Must be a variable or getter of type [List<StyleRule>].
   @css
-  static final styles = [
+  static final styles = <StyleRule>[
     css('.main', [
       // The '&' refers to the parent selector of a nested style rules.
       css('&')

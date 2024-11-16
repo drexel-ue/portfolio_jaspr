@@ -30,7 +30,7 @@ class Header extends StatelessComponent {
   }
 
   @css
-  static final styles = [
+  static final styles = <StyleRule>[
     css('header', [
       css('&').background(color: eerieBlack),
       css('nav', [
