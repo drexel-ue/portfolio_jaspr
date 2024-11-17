@@ -8,5 +8,5 @@ class Experience extends StatelessComponent {
   Iterable<Component> build(BuildContext context) sync* {}
 
   @css
-  static final styles = [];
+  static final styles = <StyleRule>[];
 }
