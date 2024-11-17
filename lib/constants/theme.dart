@@ -12,3 +12,6 @@ const white = Color.hex('#FFFFFF');
 
 /// Chinese Black.
 const chineseBlack = Color.hex('#12071f');
+
+/// Grape.
+const grape = Color.hex('#7127BA');

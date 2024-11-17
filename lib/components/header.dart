@@ -44,9 +44,11 @@ class Header extends StatelessComponent {
         css('div', [
           css('&').box(display: Display.inline),
           css('&.horizontal-spacer').flexItem(flex: const Flex(grow: 1)),
-          css('&.nav-item') //
-              .box(margin: EdgeInsets.only(left: 40.px)),
-          css('a').text(fontSize: 18.px, color: white, decoration: TextDecoration.none),
+          css('&.nav-item', [
+            css('&').box(margin: EdgeInsets.symmetric(horizontal: 40.px)),
+            css('&.active a').text(color: grape),
+            css('a').text(fontSize: 18.px, color: white, decoration: TextDecoration.none),
+          ]),
         ]),
       ]),
     ]),
