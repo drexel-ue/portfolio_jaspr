@@ -20,8 +20,8 @@ analyzer:
   # run a separate command for this: `jaspr analyze`
   plugins:
     - custom_lint
-#   exclude:
-#     - path/to/excluded/files/**
+  exclude:
+    - lib/jaspr_options.dart
 
 # Uncomment the following section to enable or disable additional rules.
 
