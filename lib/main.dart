@@ -5,6 +5,7 @@
 
 // Server-specific jaspr import.
 import 'package:jaspr/server.dart';
+import 'package:portfolio_jaspr/constants/theme.dart';
 
 // Imports the [App] component.
 import 'app.dart';
@@ -31,6 +32,7 @@ void main() {
         // Each style rule takes a valid css selector and a set of styles.
         // Styles are defined using type-safe css bindings and can be freely chained and nested.
         css('html, body')
+            .background(color: chineseBlack)
             .text(
                 fontFamily: const FontFamily.list(
                     [FontFamily('Plus Jakarta Sans'), FontFamilies.sansSerif]))
