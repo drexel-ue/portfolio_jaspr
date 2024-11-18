@@ -1,5 +1,6 @@
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_router/jaspr_router.dart';
+import 'package:portfolio_jaspr/constants/layout.dart';
 import 'package:portfolio_jaspr/constants/theme.dart';
 import 'package:portfolio_jaspr/pages/experience.dart';
 import 'package:portfolio_jaspr/pages/projects.dart';
@@ -26,15 +27,22 @@ class App extends StatelessComponent {
     // Renders a <div class="main"> html element with children.
     yield div(classes: 'main', [
       const Header(),
-      Router(routes: [
-        Route(path: '/', title: 'Home', builder: (context, state) => const Home()),
-        Route(
-          path: '/experience',
-          title: 'Experience',
-          builder: (context, state) => const Experience(),
-        ),
-        Route(path: '/projects', title: 'Projects', builder: (context, state) => const Projects()),
-        Route(path: '/about', title: 'About', builder: (context, state) => const About()),
+      div(classes: 'main-content', [
+        div(classes: 'main-content-inner', [
+          Router(routes: [
+            Route(path: '/', title: 'Home', builder: (context, state) => const Home()),
+            Route(
+              path: '/experience',
+              title: 'Experience',
+              builder: (context, state) => const Experience(),
+            ),
+            Route(
+                path: '/projects',
+                title: 'Projects',
+                builder: (context, state) => const Projects()),
+            Route(path: '/about', title: 'About', builder: (context, state) => const About()),
+          ]),
+        ]),
       ]),
     ]);
   }
@@ -47,15 +55,32 @@ class App extends StatelessComponent {
   static final styles = <StyleRule>[
     css('.main', [
       // The '&' refers to the parent selector of a nested style rules.
-      css('&')
+      css('&') //
           .background(color: chineseBlack)
-          .box(height: 100.vh)
-          .flexbox(direction: FlexDirection.column, wrap: FlexWrap.wrap),
+          .flexbox(direction: FlexDirection.column)
+          .box(
+            height: 100.vh,
+            width: 100.vw,
+            display: Display.flex,
+          ),
       css('section').flexItem(flex: const Flex(grow: 1)).flexbox(
             direction: FlexDirection.column,
             justifyContent: JustifyContent.center,
             alignItems: AlignItems.center,
           ),
+      css('.main-content', [
+        css('&') //
+            .box(display: Display.flex)
+            .flexbox(justifyContent: JustifyContent.center),
+        css('.main-content-inner', [
+          css('&') //
+              .flexItem(flex: flexGrow1)
+              .box(
+                maxWidth: maxWidth,
+                margin: EdgeInsets.symmetric(horizontal: 16.px),
+              ),
+        ]),
+      ]),
     ]),
   ];
 }

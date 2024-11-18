@@ -41,8 +41,11 @@ class Header extends StatelessComponent {
     css('header', [
       css('&') //
           .background(color: eerieBlack)
-          .box(display: Display.flex)
-          .flexbox(justifyContent: JustifyContent.center),
+          .flexbox(justifyContent: JustifyContent.center)
+          .box(
+            display: Display.flex,
+            position: const Position.sticky(top: Unit.zero),
+          ),
       css('nav', [
         css('&')
             .box(

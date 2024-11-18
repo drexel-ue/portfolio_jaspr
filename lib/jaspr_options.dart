@@ -34,6 +34,8 @@ final defaultJasprOptions = JasprOptions(
   },
   styles: () => [
     ...prefix0.Header.styles,
+    ...prefix1.About.styles,
+    ...prefix2.Experience.styles,
     ...prefix3.Home.styles,
     ...prefix4.Projects.styles,
     ...prefix5.App.styles,
